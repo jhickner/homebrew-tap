@@ -6,8 +6,8 @@ class Web < Formula
   license "MIT"
   head "https://github.com/jhickner/web.git", branch: "master"
 
-  uses_from_macos "sqlite"
   uses_from_macos "vim" => :build # xxd, which the build makes a header with
+  uses_from_macos "sqlite"
 
   def install
     system "make", "install", "PREFIX=#{prefix}"
