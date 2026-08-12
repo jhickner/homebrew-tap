@@ -27,6 +27,7 @@ class Web < Formula
   end
 
   test do
-    assert_match "usage: web", shell_output("#{bin}/web --help")
+    # the usage goes to stderr, which is where a terminal program's does
+    assert_match "usage: web", shell_output("#{bin}/web --help 2>&1")
   end
 end
